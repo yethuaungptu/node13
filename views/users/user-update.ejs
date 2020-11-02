@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <% include ../partial/head %>
+  </head>
+
+  <body>
+    <!-- Left Panel -->
+
+    <% include ../partial/left-panel %>
+    <!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+      <!-- Header-->
+      <% include ../partial/header %>
+      <!-- /header -->
+      <!-- Header-->
+
+      <div class="breadcrumbs">
+        <div class="col-sm-4">
+          <div class="page-header float-left">
+            <div class="page-title">
+              <h1>Dashboard</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="page-header float-right">
+            <div class="page-title">
+              <ol class="breadcrumb text-right">
+                <li class="active">Dashboard</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content mt-3">
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-header">User Add</div>
+              <div class="card-body card-block">
+                <form
+                  action="/users/userupdate"
+                  method="post"
+                  enctype="multipart/form-data"
+                >
+                  <input type="hidden" name="id" value="<%= user._id %>" />
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-user"></i>
+                      </div>
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        value="<%= user.name %>"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-envelope"></i>
+                      </div>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        value="<%= user.email %>"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-image"></i>
+                      </div>
+                      <input
+                        type="file"
+                        name="photo"
+                        id="photo"
+                        placeholder="Profile"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-asterisk"></i>
+                      </div>
+                      <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        value="<%= user.password %>"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-actions form-group">
+                    <button type="submit" class="btn btn-success btn-sm">
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- .content -->
+    </div>
+    <!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+    <% include ../partial/script %>
+  </body>
+</html>
