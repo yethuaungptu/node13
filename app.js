@@ -34,7 +34,8 @@ app.use(
   })
 );
 
-mongoose.connect("mongodb://127.0.0.1/node13db");
+// mongoose.connect("mongodb://127.0.0.1/node13db");
+mongoose.connect("mongodb+srv://yethu:yethu123@node13.prxxu.mongodb.net/node13?retryWrites=true&w=majority")
 var db = mongoose.connection;
 db.on(
   "error",
